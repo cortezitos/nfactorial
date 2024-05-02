@@ -27,6 +27,16 @@ app.get('/api/events', (req, res) => {
     });
 });
 
+// API to get specific event details
+app.get('/api/events/:eventId', (req, res) => {
+  const eventId = req.params.eventId;
+  db.query('SELECT * FROM EVENT WHERE eventID = ?', [eventId], (error, results) => {
+      if (error) throw error;
+      res.json(results[0] || {});
+  });
+});
+
+
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
