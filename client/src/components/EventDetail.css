@@ -1,0 +1,34 @@
+.event-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.event-detail-container h1 {
+    margin-bottom: 10px;
+}
+
+.event-detail-container p {
+    margin-bottom: 10px;
+}
+
+.event-detail-container img {
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.back-button, .register-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover, .register-button:hover {
+    background-color: #0056b3;
+}
