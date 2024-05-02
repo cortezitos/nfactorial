@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function EventDetail() {
+    const navigate = useNavigate();
     const params = useParams();
     const [eventDetails, setEventDetails] = useState(null);
 
@@ -20,6 +21,7 @@ function EventDetail() {
             <p>{eventDetails.descript}</p>
             <p>{eventDetails.eventDate}</p>
             <img src={`/photos/${eventDetails.eventID}.png`} width="250" height="250" alt="Event" />
+            <button onClick={() => navigate('/')}>Back</button>
         </div>
     );
 }

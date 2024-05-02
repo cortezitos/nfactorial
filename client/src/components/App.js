@@ -16,16 +16,20 @@ function App() {
         <Router>
             <div>
                 <h1>Events:</h1>
-                {events.map((event, index) => (
-                    <div key={event.eventID}>
-                        <h2>{event.eventName}</h2>
-                        <img src={`/photos/${index + 1}.png`} width="250" height="250" alt="Event" />
-                        <Link to={`/event/${event.eventID}`}>
-                            <button>View Details</button>
-                        </Link>
-                    </div>
-                ))}
                 <Routes>
+                    <Route path="/" element={
+                        <div>
+                            {events.map((event, index) => (
+                                <div key={event.eventID}>
+                                    <h2>{event.eventName}</h2>
+                                    <img src={`/photos/${index + 1}.png`} width="250" height="250" alt="Event" />
+                                    <Link to={`/event/${event.eventID}`}>
+                                        <button>View Details</button>
+                                    </Link>
+                                </div>
+                            ))}
+                        </div>
+                    } />
                     <Route path="/event/:eventId" element={<EventDetail />} />
                 </Routes>
             </div>
