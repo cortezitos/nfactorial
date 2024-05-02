@@ -1,31 +1,27 @@
-Below is a suggested README file for your project. This document provides an overview of the system, setup instructions, and usage details.
+# Система бронирования мероприятий
 
----
+Этот проект представляет собой систему бронирования мероприятий, которая позволяет пользователям просматривать мероприятия, просматривать подробную информацию о каждом мероприятии и бронировать места. Система построена с использованием Rest для интерфейса и Node.js с помощью Express для серверной части, с базой данных MySQL, управляющей данными.
 
-# Event Booking System
+## Особенности
 
-This project is an Event Booking System that allows users to browse events, view detailed information about each event, and book seats. The system is built using React for the frontend and Node.js with Express for the backend, with a MySQL database managing the data.
+- Просмотр предстоящих мероприятий в виде таблицы.
+- Просмотр подробной информации о каждом мероприятии, включая дату, описание и место проведения.
+- Бронирование конкретных мест на мероприятия.
+- Просмотр количества доступных мест на каждое мероприятие в режиме реального времени.
 
-## Features
-
-- Browse upcoming events in a grid layout.
-- View detailed information about each event, including date, description, and venue.
-- Book specific seats for events.
-- View the number of available seats for each event in real-time.
-
-## Requirements
+## Требования
 
 - Node.js
 - MySQL
 - React
 
-## Setup Instructions
+## Инструкции по установке
 
-### Database Setup
+### Настройка базы данных
 
-1. **MySQL Database:**
-   - Install MySQL if not already installed.
-   - Create a new database schema by running the following SQL commands:
+1. ** База данных MySQL:**
+   - Установите MySQL, если он еще не установлен.
+   - Создайте новую схему базы данных, выполнив следующие команды SQL:
 
 ```sql
 CREATE SCHEMA factorial;
@@ -53,32 +49,23 @@ VALUES ('Music Concert', '2024-05-10', 'An evening of live music', 'Concert Hall
 INSERT INTO EVENT (eventName, eventDate, descript, place) 
 VALUES ('Art Exhibition', '2024-06-15', 'Discover stunning artworks', 'Art Gallery');
 ```
+### Настройка бэкэнда
 
-### Backend Setup
+1. **Настройка Node.js:**
+   - Перейдите в каталог `сервер`.
+   - Запустите `npm install" для установки зависимостей.
+   - Запустите сервер с помощью `npm start`.
 
-1. **Node.js Environment:**
-   - Navigate to the `server` directory.
-   - Run `npm install` to install dependencies.
-   - Start the server using `npm start`.
+### Настройка интерфейса
 
-### Frontend Setup
+1. **Настройка React:**
+   - Перейдите в каталог "клиент".
+   - Запустите `npm install" для установки зависимостей.
+   - Запустите сервер разработки React, используя `npm start`.
+   - Откройте приложение по адресу `http://localhost:3000`.
 
-1. **React Setup:**
-   - Navigate to the `client` directory.
-   - Run `npm install` to install dependencies.
-   - Start the React development server using `npm start`.
-   - Access the application at `http://localhost:3000`.
+## Использование
 
-## API Endpoints
+После запуска приложения вы можете использовать веб-интерфейс для просмотра и бронирования мероприятий. На странице с подробной информацией о каждом мероприятии представлена информация и возможность напрямую выбрать и забронировать места.
 
-- **GET /api/events**: Fetch all events.
-- **GET /api/events/:eventId**: Fetch details of a specific event.
-- **POST /api/events/:eventId/book**: Book a seat for an event.
-- **GET /api/events/:eventId/booked-seats**: Get all booked seats for a specific event.
-- **GET /api/events/:eventId/booked-seats-count**: Get the count of booked seats for a specific event.
-
-## Usage
-
-Once the application is running, you can use the web interface to browse and book events. Each event's detail page provides information and the ability to select and book seats directly.
-
-For any issues or contributions, please refer to the repository's issues section or submit a pull request.
+Если у вас возникнут какие-либо вопросы или предложения, пожалуйста, обратитесь к разделу "Проблемы" репозитория или отправьте запрос на получение информации.
